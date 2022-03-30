@@ -1,0 +1,24 @@
+{
+  "name": "githubapi",
+  "version": "1.0.0",
+  "description": "Exposing Github API endpoints to access PRs",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wawo9193/github-api.git"
+  },
+  "author": "Wayne Wood",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wawo9193/github-api/issues"
+  },
+  "homepage": "https://github.com/wawo9193/github-api#readme",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "request": "^2.88.2"
+  }
+}
