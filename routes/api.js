@@ -24,12 +24,14 @@ router.get('/pulls', async (req, res) => {
         headers: {
             'user-agent': 'node.js'
         },
-        responseType: 'json',
-        searchParams: {
-            per_page: 3,
-            page_number:1
-        }
+        responseType: 'json'
     };
+
+    // optional params to limit results for testing (rate limit) purposes
+    const qs = new URLSearchParams();
+    if (req.query.per_page) qs.append('per_page', req.query.per_page);
+    if (req.query.page_number) qs.append('page_number', req.query.page_number);
+    if (qs.toString().length !== 0) options['searchParams'] = qs;
     
     // retrieve list of pull requests
     await got.get(url, options)
@@ -42,7 +44,7 @@ router.get('/pulls', async (req, res) => {
         })
         .catch(err => {
             console.error(`PR request error: ${err.message}`)
-            throw new Error(`PR request error: ${err.message}`)
+            throw new Error('PR request error')
         });
 
     // Iterate all pull numbers and request to get number of commits
@@ -65,7 +67,7 @@ router.get('/pulls', async (req, res) => {
             })
             .catch(err => {
                 console.error(`Commit request error: ${err.message}`)
-                throw new Error(`Commit request error: ${err.message}`)
+                throw new Error('Commit request error')
             });
     }
 
