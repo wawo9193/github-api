@@ -20,12 +20,8 @@
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "got": "^11.8.3",
-<<<<<<< HEAD
     "jest": "^27.5.1",
     "request": "^2.88.2",
     "supertest": "^6.2.2"
-=======
-    "request": "^2.88.2"
->>>>>>> 1c74641 (2 - [DEV] - Added comments, commit count)
   }
 }
