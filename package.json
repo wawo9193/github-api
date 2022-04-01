@@ -4,7 +4,8 @@
   "description": "Exposing Github API endpoints to access PRs",
   "main": "index.js",
   "scripts": {
-    "test": "jest --runInBand --detectOpenHandles --forceExit"
+    "test": "jest --runInBand --detectOpenHandles --forceExit",
+    "start": "node index"
   },
   "repository": {
     "type": "git",

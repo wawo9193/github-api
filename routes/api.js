@@ -32,7 +32,7 @@ router.get('/pulls', async (req, res) => {
     if (req.query.per_page) qs.append('per_page', req.query.per_page);
     if (req.query.page_number) qs.append('page_number', req.query.page_number);
     if (qs.toString().length !== 0) options['searchParams'] = qs;
-    
+    console.log(options)
     // retrieve list of pull requests
     await got.get(url, options)
         .then(async (pullRes) => {
